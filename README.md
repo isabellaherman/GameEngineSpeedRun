@@ -22,7 +22,7 @@ Each engine will be used to recreate the same game level, aiming to keep the des
 
 ## 📥 Download Projects
 
-- [Bitsy](./Unreal) Engine - ✧ *suggested by [@baptixta1](https://twitter.com/baptixta1)*
+- [Bitsy](./Unreal) Engine ✧ *suggested by [@baptixta1](https://twitter.com/baptixta1)*
 
 **Privacy Note:** If you've been mentioned here and would prefer not to be, please reach out, and I'll promptly remove the reference. Respecting your privacy and comfort is paramount.
 
