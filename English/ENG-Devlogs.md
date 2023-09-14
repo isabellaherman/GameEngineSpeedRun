@@ -8,6 +8,9 @@ Now, for the process:
 
 - **⏳ Time Tracking:** I'll be using the Pomodoro technique to track my work, and you'll see little 🍅 emojis to represent that. Each 🍅 stands for a 25-minute work session.
 
+> **Note:** The Pomodoro Technique is a time management method where work is broken into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, the plural in English of the Italian word pomodoro (tomato). Hence, the 🍅 emoji!
+
+
 ### How to Read the Emojis:
 
 - **🌕 Full Moon:** Clear and easy-to-understand documentation.
@@ -16,8 +19,6 @@ Now, for the process:
 - **💼 Professional Touch:** The engine has tools or features that seem particularly geared towards professional game development.
 - **🎨 Artist Friendly:** The engine has tools or features that are beneficial for both artists and non-artists.
 - **🤖 Programmer Oriented:** The engine seems more geared towards those with a programming background.
-
-> **Note:** The Pomodoro Technique is a time management method where work is broken into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, the plural in English of the Italian word pomodoro (tomato). Hence, the 🍅 emoji!
 
 Enjoy the read, and feel free to reach out if you have any thoughts or questions!
 
