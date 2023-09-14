@@ -17,7 +17,7 @@ Each engine will be used to recreate the same game level, aiming to keep the des
 
 ## 📝 Devlog
 
-- [🇬🇧 English](#)
+- [🇬🇧 English](./English/ENG-Devlogs.md)
 - [🇧🇷 Portuguese](#)
 
 ## 📥 Download Projects
