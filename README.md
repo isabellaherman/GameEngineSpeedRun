@@ -26,6 +26,8 @@ Each engine will be used to recreate the same game level, aiming to keep the des
 - [Godot](./Godot)
 ... (add other engines as needed)
 
+**Privacy Note:** If you've been mentioned here and would prefer not to be, please reach out, and I'll promptly remove the reference. Respecting your privacy and comfort is paramount.
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
