@@ -4,7 +4,8 @@ A personal study comparing various game engines, which I've decided to share ope
 
 ## 📌 Motivation
 
-The gaming industry is ever-evolving, and choosing the right engine can make all the difference. This project was born out of curiosity to see how different engines handle the same game design.
+Originating from a playful [tweet](https://twitter.com/isahermanx/status/1701958922767102227), this project has grown into a personal challenge. I wanted to explore and understand how different game engines handle the same platformer game concept. Recognizing the genuine interest from the game development community, I thought it best to document and share this experiment. It's an opportunity to learn, compare, and maybe even spark new ideas.
+
 
 ## 🎮 Game Description
 
