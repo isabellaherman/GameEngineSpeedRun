@@ -1,6 +1,8 @@
 # Olá! 🌟
 
-Primeiramente, obrigado por passar por aqui! Este espaço "Devlogs" é um diário digital durante o projeto "Game Engine Speed Run". O objetivo desse espaço é dar uma visão mais visual do passo a passo dessa jornada explorando diferentes game engines. No fim, a meta não é definir qual é a melhor, mas de entender suas peculiaridades e características únicas.
+Primeiramente, obrigado por passar por aqui! Este espaço "Devlogs" é um diário digital durante o projeto "Game Engine Speed Run".
+
+O objetivo desse espaço é dar uma visão mais visual do passo a passo dessa jornada explorando diferentes game engines. No fim, a meta não é definir qual é a melhor, mas de entender suas peculiaridades e características únicas.
 
 Agora, sobre o processo:
 
