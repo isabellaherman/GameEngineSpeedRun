@@ -15,16 +15,14 @@ The game in focus is a simple 2D platformer where the player aims to reach the e
 
 Each engine will be used to recreate the same game level, aiming to keep the design and gameplay as consistent as possible. By comparing the implementation across each engine, we hope to pinpoint their respective strengths and limitations.
 
-## 🌐 Multilanguage
+## 📝 Devlog
 
-- [English 🇬🇧🇺🇸](README.en.md)
-- [Português 🇧🇷🇵🇹](README.pt.md)
+- [🇬🇧 English](#)
+- [🇧🇷 Portuguese](#)
 
-## 📂 Browse by Engine
+## 📥 Download Projects
 
-- [Unreal](./Unreal)
-- [Godot](./Godot)
-... (add other engines as needed)
+- [Bitsy](./Unreal) - *Suggested by [@baptixta1](https://twitter.com/baptixta1)*
 
 **Privacy Note:** If you've been mentioned here and would prefer not to be, please reach out, and I'll promptly remove the reference. Respecting your privacy and comfort is paramount.
 
