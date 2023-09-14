@@ -38,7 +38,7 @@ If you like this project and want to stay in the loop with other stuff I do, joi
 - [🐦 Twitter](https://twitter.com/isahermanx)
 - [📷 Instagram](https://instagram.com/isabellaherman)
 
-**Bonus:** If you already are or want to be a game developer consider to join our game development community 🧙‍♀️🧙🧙‍♂️. We discuss, share, and collaborate on all things game dev in our enchanting community. Consider this your official invitation! 💌
+**Bonus:** If you already are or want to be a game developer, consider to join our game development community 🧙‍♀️🧙🧙‍♂️. We discuss, share, and collaborate on all things game dev in our enchanting community. Consider this your official invitation! 💌
 
 - [🔮 Join Mage, our GameDev Enclave!](https://discord.gg/fgDzCTweag)
 
