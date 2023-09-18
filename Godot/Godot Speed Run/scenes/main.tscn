@@ -1,0 +1,1023 @@
+[gd_scene load_steps=33 format=3 uid="uid://de58jrs87vqch"]
+
+[ext_resource type="PackedScene" uid="uid://cruqwfrsgioe2" path="res://scenes/player.tscn" id="1_8amtc"]
+[ext_resource type="Texture2D" uid="uid://dintgywb01adn" path="res://assets/LEVEL REFERENCE.png" id="1_igb11"]
+[ext_resource type="Texture2D" uid="uid://cy55fhulux1yv" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_crateSmall.png" id="2_253lj"]
+[ext_resource type="Texture2D" uid="uid://bdggapulg1jw0" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_brick.png" id="2_c46p7"]
+[ext_resource type="Texture2D" uid="uid://clxdwsdgy2acf" path="res://assets/paperbackground-freepik.png" id="3_fpvf4"]
+[ext_resource type="Texture2D" uid="uid://1s6ktjy3ptbg" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_archColumn.png" id="6_t1qbv"]
+[ext_resource type="Texture2D" uid="uid://0vnj818o8s3t" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_spike.png" id="6_tqip2"]
+[ext_resource type="Texture2D" uid="uid://db176uy1v5b81" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_bridge.png" id="8_t7u1h"]
+[ext_resource type="Texture2D" uid="uid://d3qxu5cybdpey" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_castle.png" id="9_mlv1b"]
+[ext_resource type="Texture2D" uid="uid://bhgtogneg8c0d" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_treeTrunk.png" id="10_rd688"]
+[ext_resource type="Texture2D" uid="uid://dip6ryfrgw668" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_coin.png" id="11_o3a86"]
+[ext_resource type="Texture2D" uid="uid://dfdtdfx58e6b" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_key.png" id="12_lkmp0"]
+[ext_resource type="Texture2D" uid="uid://dvtlskbcph2va" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_door.png" id="13_duwd3"]
+[ext_resource type="Texture2D" uid="uid://cao54t0xtrwv5" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_cog.png" id="14_cq6qs"]
+[ext_resource type="Texture2D" uid="uid://ba3exk700ajqu" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_spikes.png" id="15_tkffv"]
+[ext_resource type="Texture2D" uid="uid://ddu04hehbw2bv" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_bush.png" id="16_hskrg"]
+[ext_resource type="Texture2D" uid="uid://ngy5m2n1ra1g" path="res://assets/secret area bg.png" id="17_qqufb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_022hr"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_p12iq"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnhnm"]
+size = Vector2(123, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hubf3"]
+size = Vector2(122, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqvt6"]
+size = Vector2(20, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uksp4"]
+size = Vector2(41, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnvt2"]
+size = Vector2(81, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwtib"]
+size = Vector2(81, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv1ot"]
+size = Vector2(122, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw8vg"]
+size = Vector2(105, 55)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2wgo"]
+radius = 56.0357
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilco3"]
+size = Vector2(118, 84)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvdhb"]
+radius = 42.5441
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aeww"]
+size = Vector2(63, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nkuxi"]
+radius = 24.0208
+
+[node name="Main" type="Node2D"]
+
+[node name="LevelReference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(533, 220)
+texture = ExtResource("1_igb11")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -5
+offset_left = -416.0
+offset_top = -504.0
+offset_right = 1504.0
+offset_bottom = 777.0
+texture = ExtResource("3_fpvf4")
+stretch_mode = 3
+
+[node name="Player" parent="." instance=ExtResource("1_8amtc")]
+z_index = 3
+position = Vector2(-112, 524)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_022hr")
+position = Vector2(551, 342)
+scale = Vector2(8.72, 14.68)
+mesh = SubResource("QuadMesh_p12iq")
+
+[node name="Level Design" type="Node" parent="."]
+
+[node name="Fortress Head Block" type="StaticBody2D" parent="Level Design"]
+z_index = 4
+position = Vector2(423, 69)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Head Block"]
+texture = ExtResource("9_mlv1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Head Block"]
+position = Vector2(-0.5, 9)
+shape = SubResource("RectangleShape2D_hnhnm")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Thin Ground4" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(665, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Thin Ground4"]
+texture = ExtResource("8_t7u1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Thin Ground4"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_hubf3")
+
+[node name="Fortress Head Block2" type="StaticBody2D" parent="Level Design"]
+z_index = 4
+position = Vector2(665, 69)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Head Block2"]
+texture = ExtResource("9_mlv1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Head Block2"]
+position = Vector2(-0.5, 9)
+shape = SubResource("RectangleShape2D_hnhnm")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Fortress Thin Wall" type="StaticBody2D" parent="Level Design"]
+position = Vector2(372, 230)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Thin Wall"]
+texture = ExtResource("10_rd688")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Thin Wall"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kqvt6")
+
+[node name="Fortress Thin Wall2" type="StaticBody2D" parent="Level Design"]
+position = Vector2(372, 349)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Thin Wall2"]
+texture = ExtResource("10_rd688")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Thin Wall2"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kqvt6")
+
+[node name="Thin Platform" type="StaticBody2D" parent="Level Design"]
+position = Vector2(163, 369)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Thin Platform"]
+texture = ExtResource("6_t1qbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Thin Platform"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_uksp4")
+
+[node name="Platform Z" type="Node" parent="Level Design"]
+
+[node name="Platform Ground" type="StaticBody2D" parent="Level Design/Platform Z"]
+position = Vector2(193, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z/Platform Ground"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z/Platform Ground"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground4" type="StaticBody2D" parent="Level Design/Platform Z"]
+position = Vector2(274, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z/Platform Ground4"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z/Platform Ground4"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground2" type="StaticBody2D" parent="Level Design/Platform Z"]
+position = Vector2(193, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z/Platform Ground2"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z/Platform Ground2"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground3" type="StaticBody2D" parent="Level Design/Platform Z"]
+position = Vector2(112, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z/Platform Ground3"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z/Platform Ground3"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Z2" type="Node" parent="Level Design"]
+
+[node name="Platform Ground" type="StaticBody2D" parent="Level Design/Platform Z2"]
+position = Vector2(904, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z2/Platform Ground"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z2/Platform Ground"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground4" type="StaticBody2D" parent="Level Design/Platform Z2"]
+position = Vector2(985, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z2/Platform Ground4"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z2/Platform Ground4"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground2" type="StaticBody2D" parent="Level Design/Platform Z2"]
+position = Vector2(1066, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z2/Platform Ground2"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z2/Platform Ground2"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground3" type="StaticBody2D" parent="Level Design/Platform Z2"]
+position = Vector2(985, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Z2/Platform Ground3"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Z2/Platform Ground3"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform L" type="Node" parent="Level Design"]
+
+[node name="Platform Ground" type="StaticBody2D" parent="Level Design/Platform L"]
+z_index = 1
+position = Vector2(-109, 168)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform L/Platform Ground"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform L/Platform Ground"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground4" type="StaticBody2D" parent="Level Design/Platform L"]
+z_index = 1
+position = Vector2(-28, 248)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform L/Platform Ground4"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform L/Platform Ground4"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground2" type="StaticBody2D" parent="Level Design/Platform L"]
+z_index = 1
+position = Vector2(-109, 248)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform L/Platform Ground2"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform L/Platform Ground2"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Spike Block" type="Node" parent="Level Design"]
+
+[node name="Platform Spike Ground" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+position = Vector2(-204, -114)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Spike Ground"]
+texture = ExtResource("6_tqip2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Spike Ground"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lwtib")
+
+[node name="Platform Spike Ground2" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+position = Vector2(-126, -194)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Spike Ground2"]
+texture = ExtResource("6_tqip2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Spike Ground2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lwtib")
+
+[node name="Platform Spike Ground3" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+position = Vector2(-46, -274)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Spike Ground3"]
+texture = ExtResource("6_tqip2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Spike Ground3"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lwtib")
+
+[node name="Platform Ground2" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+z_index = 1
+position = Vector2(-203, -214)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Ground2"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Ground2"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground4" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+z_index = 1
+position = Vector2(-125, -294)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Ground4"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Ground4"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Platform Ground3" type="StaticBody2D" parent="Level Design/Platform Spike Block"]
+z_index = 1
+position = Vector2(-203, -294)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Platform Spike Block/Platform Ground3"]
+texture = ExtResource("2_253lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Platform Spike Block/Platform Ground3"]
+position = Vector2(-0.5, 20)
+shape = SubResource("RectangleShape2D_mnvt2")
+
+[node name="Wall Brick Blocks" type="Node" parent="Level Design"]
+
+[node name="Brick Block" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(59, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block4" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-62, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block4"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block4"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block5" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-182, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block5"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block5"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block7" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block7"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block7"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block8" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, 470)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block8"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block8"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block9" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, 349)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block9"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block9"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block10" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, 228)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block10"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block10"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block11" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, 108)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block11"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block11"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block12" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block12"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block12"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block13" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, -134)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block13"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block13"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block14" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, -255)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block14"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block14"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block15" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-303, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block15"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block15"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block28" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block28"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block28"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block29" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, 470)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block29"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block29"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block30" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, 349)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block30"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block30"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block31" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, 228)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block31"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block31"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block32" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, 108)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block32"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block32"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block33" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block33"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block33"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block34" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, -134)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block34"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block34"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block35" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, -255)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block35"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block35"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block36" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1389, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block36"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block36"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block16" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-182, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block16"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block16"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block17" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(-61, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block17"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block17"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block18" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(60, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block18"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block18"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block19" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(180, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block19"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block19"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block20" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(301, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block20"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block20"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block21" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(422, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block21"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block21"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block22" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(543, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block22"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block22"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block37" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(664, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block37"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block37"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block38" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(785, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block38"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block38"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block39" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(905, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block39"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block39"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block40" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1026, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block40"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block40"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block41" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1147, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block41"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block41"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block42" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1268, -374)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block42"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block42"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block2" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(180, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block2"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block3" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(300, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block3"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block3"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block6" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(424, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block6"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block6"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block23" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(666, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block23"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block23"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block24" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(788, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block24"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block24"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block25" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(909, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block25"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block25"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block26" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1031, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block26"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block26"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block27" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+z_index = 2
+position = Vector2(1154, 591)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Brick Block27"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Brick Block27"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Thin Ground" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+position = Vector2(545, 671)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Thin Ground"]
+texture = ExtResource("8_t7u1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Thin Ground"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_hubf3")
+
+[node name="Thin Ground2" type="StaticBody2D" parent="Level Design/Wall Brick Blocks"]
+position = Vector2(1275, 671)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Wall Brick Blocks/Thin Ground2"]
+texture = ExtResource("8_t7u1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Wall Brick Blocks/Thin Ground2"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_hubf3")
+
+[node name="Thin Ground3" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(423, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Thin Ground3"]
+texture = ExtResource("8_t7u1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Thin Ground3"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_hubf3")
+
+[node name="Brick Block43" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(424, 471)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Brick Block43"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Brick Block43"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block45" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(666, 471)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Brick Block45"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Brick Block45"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block46" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(544, 60)
+scale = Vector2(1, 0.52)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Brick Block46"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Brick Block46"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Brick Block44" type="StaticBody2D" parent="Level Design"]
+visible = false
+z_index = 2
+position = Vector2(424, 351)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Brick Block44"]
+texture = ExtResource("2_c46p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Brick Block44"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hv1ot")
+
+[node name="Interactable Objects" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="Interactable Objects"]
+
+[node name="Spikes" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
+z_index = -1
+position = Vector2(424, -22)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes"]
+texture = ExtResource("15_tkffv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes"]
+position = Vector2(-2.5, 25.5)
+shape = SubResource("RectangleShape2D_cw8vg")
+
+[node name="Spikes2" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
+z_index = -1
+position = Vector2(544, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes2"]
+texture = ExtResource("15_tkffv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes2"]
+position = Vector2(-2.5, 25.5)
+shape = SubResource("RectangleShape2D_cw8vg")
+
+[node name="Spikes3" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
+z_index = -1
+position = Vector2(663, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes3"]
+texture = ExtResource("15_tkffv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes3"]
+position = Vector2(-2.5, 25.5)
+shape = SubResource("RectangleShape2D_cw8vg")
+
+[node name="Enemy" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
+z_index = -1
+position = Vector2(232, -40)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Enemy"]
+texture = ExtResource("16_hskrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Enemy"]
+shape = SubResource("CircleShape2D_d2wgo")
+
+[node name="Enemy2" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
+z_index = -1
+position = Vector2(955, -120)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Enemy2"]
+texture = ExtResource("16_hskrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Enemy2"]
+shape = SubResource("CircleShape2D_d2wgo")
+
+[node name="Door" type="StaticBody2D" parent="Interactable Objects"]
+position = Vector2(546, 551)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Door"]
+texture = ExtResource("13_duwd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Door"]
+position = Vector2(-1, 19)
+shape = SubResource("RectangleShape2D_ilco3")
+
+[node name="Interactable Gear" type="AnimatableBody2D" parent="Interactable Objects"]
+position = Vector2(424, 370)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Interactable Gear"]
+texture = ExtResource("14_cq6qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Interactable Gear"]
+shape = SubResource("CircleShape2D_wvdhb")
+
+[node name="Interactable Platform" type="AnimatableBody2D" parent="Interactable Objects"]
+position = Vector2(546, 431)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Interactable Platform"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Interactable Platform"]
+texture = ExtResource("6_t1qbv")
+
+[node name="Key" type="AnimatableBody2D" parent="Interactable Objects"]
+position = Vector2(664, 341)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Key"]
+texture = ExtResource("12_lkmp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Key"]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_5aeww")
+
+[node name="Coins" type="Node" parent="Interactable Objects"]
+
+[node name="Coin" type="AnimatableBody2D" parent="Interactable Objects/Coins"]
+position = Vector2(1273, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Coins/Coin"]
+texture = ExtResource("11_o3a86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Coins/Coin"]
+shape = SubResource("CircleShape2D_nkuxi")
+
+[node name="Coin2" type="AnimatableBody2D" parent="Interactable Objects/Coins"]
+position = Vector2(1273, 118)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Coins/Coin2"]
+texture = ExtResource("11_o3a86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Coins/Coin2"]
+shape = SubResource("CircleShape2D_nkuxi")
+
+[node name="Coin3" type="AnimatableBody2D" parent="Interactable Objects/Coins"]
+position = Vector2(1273, 229)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Coins/Coin3"]
+texture = ExtResource("11_o3a86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Coins/Coin3"]
+shape = SubResource("CircleShape2D_nkuxi")
+
+[node name="Coin4" type="AnimatableBody2D" parent="Interactable Objects/Coins"]
+position = Vector2(1273, 351)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Coins/Coin4"]
+texture = ExtResource("11_o3a86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Coins/Coin4"]
+shape = SubResource("CircleShape2D_nkuxi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(548, 300)
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("17_qqufb")
