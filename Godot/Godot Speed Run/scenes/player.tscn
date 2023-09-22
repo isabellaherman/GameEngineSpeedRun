@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cruqwfrsgioe2"]
 
-[ext_resource type="Texture2D" uid="uid://dpqaycl5uqy1m" path="res://assets/kenney_scribble-platformer/PNG/Retina/character_squareGreen.png" id="1_adnrf"]
 [ext_resource type="Shader" uid="uid://brtxfo68t8ou3" path="res://assets/PlayerTiltMovementMaterial.tres" id="1_gepen"]
+[ext_resource type="Texture2D" uid="uid://blc4qgfdrr24j" path="res://assets/kenney_scribble-platformer/PNG/Retina/character_roundPurple.png" id="2_r3urr"]
 
 [sub_resource type="GDScript" id="GDScript_nv0l7"]
 script/source = "extends CharacterBody2D
@@ -30,33 +30,36 @@ func _physics_process(delta):
 	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction:
 		velocity.x = direction * SPEED
+		update_skew(-direction)
 		flip_sprite(direction)
-		update_skew(-direction)  # Pass the inverted direction for skew
+		apply_zoom_effect(direction)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		update_skew(0)
+		apply_zoom_effect(0)
 
 	move_and_slide()
 
 func update_skew(direction):
 	var mat = $Sprite.material as ShaderMaterial
-	var skew_dir = direction
-	# If sprite is flipped, reverse the skew direction.
-	if $Sprite.scale.x < 0:
-		skew_dir *= -1 
-
-	if skew_dir < 0:
+	if direction < 0:
 		mat.set(\"shader_param/skew_amount\", -MAX_SKEW)
-	elif skew_dir > 0:
+	elif direction > 0:
 		mat.set(\"shader_param/skew_amount\", MAX_SKEW)
 	else:
 		mat.set(\"shader_param/skew_amount\", 0.0)
 
 func flip_sprite(direction):
 	if direction < 0:
-		$Sprite.scale.x = -abs($Sprite.scale.x)
-	elif direction > 0:
-		$Sprite.scale.x = abs($Sprite.scale.x)
+		$Sprite.flip_h = true
+	else:
+		$Sprite.flip_h = false
+
+func apply_zoom_effect(direction):
+	if direction != 0:
+		$Sprite.scale.y = 1.05  # Zoom in by 5% vertically.
+	else:
+		$Sprite.scale.y = 1.0    # Reset to original size.
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o14uo"]
@@ -64,7 +67,7 @@ shader = ExtResource("1_gepen")
 shader_parameter/skew_amount = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iq1q1"]
-size = Vector2(79, 136)
+size = Vector2(79, 123)
 
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_nv0l7")
@@ -72,10 +75,10 @@ script = SubResource("GDScript_nv0l7")
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_o14uo")
 position = Vector2(0, -64)
-texture = ExtResource("1_adnrf")
+texture = ExtResource("2_r3urr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -58)
+position = Vector2(-0.5, -64.5)
 shape = SubResource("RectangleShape2D_iq1q1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
