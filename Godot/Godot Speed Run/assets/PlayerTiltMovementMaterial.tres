@@ -1,0 +1,11 @@
+[gd_resource type="Shader" format=3 uid="uid://brtxfo68t8ou3"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float skew_amount : hint_range(1.0, -1.0);
+
+void vertex() {
+VERTEX.x += VERTEX.y * skew_amount;
+
+}"

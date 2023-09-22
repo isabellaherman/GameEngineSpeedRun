@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cruqwfrsgioe2"]
+[gd_scene load_steps=6 format=3 uid="uid://cruqwfrsgioe2"]
 
 [ext_resource type="Texture2D" uid="uid://dpqaycl5uqy1m" path="res://assets/kenney_scribble-platformer/PNG/Retina/character_squareGreen.png" id="1_adnrf"]
+[ext_resource type="Shader" uid="uid://brtxfo68t8ou3" path="res://assets/PlayerTiltMovementMaterial.tres" id="1_gepen"]
 
 [sub_resource type="GDScript" id="GDScript_nv0l7"]
 script/source = "extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
+const MAX_SKEW = 0.1
 
+var sprite_material = preload(\"res://assets/PlayerTiltMovementMaterial.tres\")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 
+func _ready():
+	print(sprite_material)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -22,15 +27,41 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction:
 		velocity.x = direction * SPEED
+		flip_sprite(direction)
+		update_skew(-direction)  # Pass the inverted direction for skew
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		update_skew(0)
 
 	move_and_slide()
+
+func update_skew(direction):
+	var mat = $Sprite.material as ShaderMaterial
+	var skew_dir = direction
+	# If sprite is flipped, reverse the skew direction.
+	if $Sprite.scale.x < 0:
+		skew_dir *= -1 
+
+	if skew_dir < 0:
+		mat.set(\"shader_param/skew_amount\", -MAX_SKEW)
+	elif skew_dir > 0:
+		mat.set(\"shader_param/skew_amount\", MAX_SKEW)
+	else:
+		mat.set(\"shader_param/skew_amount\", 0.0)
+
+func flip_sprite(direction):
+	if direction < 0:
+		$Sprite.scale.x = -abs($Sprite.scale.x)
+	elif direction > 0:
+		$Sprite.scale.x = abs($Sprite.scale.x)
 "
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o14uo"]
+shader = ExtResource("1_gepen")
+shader_parameter/skew_amount = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iq1q1"]
 size = Vector2(79, 136)
@@ -38,7 +69,8 @@ size = Vector2(79, 136)
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_nv0l7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_o14uo")
 position = Vector2(0, -64)
 texture = ExtResource("1_adnrf")
 
