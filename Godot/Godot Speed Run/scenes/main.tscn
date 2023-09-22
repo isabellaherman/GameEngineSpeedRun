@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://de58jrs87vqch"]
+[gd_scene load_steps=31 format=3 uid="uid://de58jrs87vqch"]
 
 [ext_resource type="PackedScene" uid="uid://cruqwfrsgioe2" path="res://scenes/player.tscn" id="1_8amtc"]
 [ext_resource type="Texture2D" uid="uid://dintgywb01adn" path="res://assets/LEVEL REFERENCE.png" id="1_igb11"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dfdtdfx58e6b" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_key.png" id="12_lkmp0"]
 [ext_resource type="Texture2D" uid="uid://dvtlskbcph2va" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_door.png" id="13_duwd3"]
 [ext_resource type="Texture2D" uid="uid://cao54t0xtrwv5" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_cog.png" id="14_cq6qs"]
-[ext_resource type="Texture2D" uid="uid://ba3exk700ajqu" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_spikes.png" id="15_tkffv"]
 [ext_resource type="Texture2D" uid="uid://ddu04hehbw2bv" path="res://assets/kenney_scribble-platformer/PNG/Retina/tile_bush.png" id="16_hskrg"]
 [ext_resource type="Texture2D" uid="uid://ngy5m2n1ra1g" path="res://assets/secret area bg.png" id="17_qqufb"]
 
@@ -24,7 +23,7 @@
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnhnm"]
-size = Vector2(123, 102)
+size = Vector2(123, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hubf3"]
 size = Vector2(122, 44)
@@ -42,10 +41,7 @@ size = Vector2(81, 82)
 size = Vector2(81, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv1ot"]
-size = Vector2(122, 121)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw8vg"]
-size = Vector2(105, 55)
+size = Vector2(122, 120.615)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2wgo"]
 radius = 56.0357
@@ -99,7 +95,7 @@ position = Vector2(423, 69)
 texture = ExtResource("9_mlv1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Head Block"]
-position = Vector2(-0.5, 9)
+position = Vector2(-0.5, 10)
 shape = SubResource("RectangleShape2D_hnhnm")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -113,18 +109,6 @@ texture = ExtResource("8_t7u1h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Thin Ground4"]
 position = Vector2(0, -41)
 shape = SubResource("RectangleShape2D_hubf3")
-
-[node name="Fortress Head Block2" type="StaticBody2D" parent="Level Design"]
-z_index = 4
-position = Vector2(665, 69)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Head Block2"]
-texture = ExtResource("9_mlv1b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Head Block2"]
-position = Vector2(-0.5, 9)
-shape = SubResource("RectangleShape2D_hnhnm")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Fortress Thin Wall" type="StaticBody2D" parent="Level Design"]
 position = Vector2(372, 230)
@@ -836,6 +820,29 @@ texture = ExtResource("8_t7u1h")
 position = Vector2(0, -41)
 shape = SubResource("RectangleShape2D_hubf3")
 
+[node name="Fortress Head Block2" type="StaticBody2D" parent="Level Design"]
+z_index = 4
+position = Vector2(665, 69)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Fortress Head Block2"]
+texture = ExtResource("9_mlv1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Fortress Head Block2"]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_hnhnm")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Thin Ground5" type="StaticBody2D" parent="Level Design"]
+z_index = 2
+position = Vector2(665, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Design/Thin Ground5"]
+texture = ExtResource("8_t7u1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Thin Ground5"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_hubf3")
+
 [node name="Brick Block43" type="StaticBody2D" parent="Level Design"]
 z_index = 2
 position = Vector2(424, 471)
@@ -864,10 +871,11 @@ position = Vector2(544, 60)
 scale = Vector2(1, 0.52)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level Design/Brick Block46"]
+position = Vector2(0, 1.92307)
 texture = ExtResource("2_c46p7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Design/Brick Block46"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 0.692307)
 shape = SubResource("RectangleShape2D_hv1ot")
 
 [node name="Brick Block44" type="StaticBody2D" parent="Level Design"]
@@ -885,39 +893,6 @@ shape = SubResource("RectangleShape2D_hv1ot")
 [node name="Interactable Objects" type="Node" parent="."]
 
 [node name="Enemies" type="Node" parent="Interactable Objects"]
-
-[node name="Spikes" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
-z_index = -1
-position = Vector2(424, -22)
-
-[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes"]
-texture = ExtResource("15_tkffv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes"]
-position = Vector2(-2.5, 25.5)
-shape = SubResource("RectangleShape2D_cw8vg")
-
-[node name="Spikes2" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
-z_index = -1
-position = Vector2(544, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes2"]
-texture = ExtResource("15_tkffv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes2"]
-position = Vector2(-2.5, 25.5)
-shape = SubResource("RectangleShape2D_cw8vg")
-
-[node name="Spikes3" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
-z_index = -1
-position = Vector2(663, 12)
-
-[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/Enemies/Spikes3"]
-texture = ExtResource("15_tkffv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Enemies/Spikes3"]
-position = Vector2(-2.5, 25.5)
-shape = SubResource("RectangleShape2D_cw8vg")
 
 [node name="Enemy" type="AnimatableBody2D" parent="Interactable Objects/Enemies"]
 z_index = -1
@@ -1021,3 +996,6 @@ shape = SubResource("CircleShape2D_nkuxi")
 position = Vector2(548, 300)
 scale = Vector2(1.12, 1.12)
 texture = ExtResource("17_qqufb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(546, 113)
